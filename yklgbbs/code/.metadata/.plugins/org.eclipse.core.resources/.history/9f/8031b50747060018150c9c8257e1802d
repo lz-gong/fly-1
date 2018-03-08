@@ -1,0 +1,25 @@
+package com.neusoft.service;
+
+import com.neusoft.bean.Userinfo;
+import com.neusoft.dao.IUserDao;
+import com.neusoft.dao.UserDaoImp;
+
+public class UserServiceImp implements IUserService{
+
+	@Override
+	public int addUser(Userinfo user) {
+		//调用dao层注册用户
+		IUserDao ius=new UserDaoImp();
+		int rel=ius.addUser(user);
+		return rel;
+	}
+
+	@Override
+	public Userinfo findUser(String email, String passowrd) {
+		IUserDao iud=new UserDaoImp();
+		iud.findUser(email, passowrd);
+		return null;
+	}
+	
+	
+}

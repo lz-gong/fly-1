@@ -1,0 +1,15 @@
+package com.neusoft.service;
+
+import java.util.List;
+
+import com.neusoft.bean.Category;
+
+public class TopicServiceImp implements ITopicService{
+
+	@Override
+	public List<Category> getCategoryInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

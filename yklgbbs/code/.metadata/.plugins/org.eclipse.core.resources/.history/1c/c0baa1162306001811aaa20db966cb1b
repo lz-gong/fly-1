@@ -1,0 +1,5 @@
+package com.neusoft.servlet;
+
+public interface IUserService {
+
+}

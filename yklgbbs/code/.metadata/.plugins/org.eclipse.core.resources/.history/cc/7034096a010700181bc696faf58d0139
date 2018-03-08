@@ -1,0 +1,5 @@
+package com.neusoft.service;
+
+public class TopicServiceImp {
+
+}

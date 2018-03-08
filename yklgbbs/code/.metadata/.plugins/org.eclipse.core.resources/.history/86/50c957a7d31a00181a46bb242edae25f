@@ -1,0 +1,64 @@
+package com.neusoft.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OtherUtil {
+	public static String ajaxPostTransformLink(String text) {
+		//%进行转义
+	    String arr3[]=splitRewrite(text,"%25");
+	    String temp="";
+	    for(int k=0;k<arr3.length;k++){
+	        if(k!=arr3.length-1){
+	            temp+=arr3[k]+"%";
+	        }else{
+	            temp+=arr3[k];
+	        }
+	    }
+
+	    //+进行转义
+	    String arr2[]=splitRewrite(temp,"%2B");
+	    temp="";
+	    for(int j=0;j<arr2.length;j++){
+	        if(j!=arr2.length-1){
+	            temp+=arr2[j]+"+";
+	        }else{
+	            temp+=arr2[j];
+	        }
+	    }
+
+	    //&进行转义
+	    String arr1[]=splitRewrite(temp,"%26");
+	    temp="";
+	    for(int i=0;i<arr1.length;i++){
+	        if(i!=arr1.length-1){
+	            temp+=arr1[i]+"&";
+	        }else{
+	            temp+=arr1[i];
+	        }
+	    }
+	    return temp;
+	}
+	
+	public static String[] splitRewrite(String text,String index) {
+		String arr[]=null;
+		int indexLen=index.length();
+		List<String> list=new ArrayList<String>();
+		String temp=text;
+		while(temp.indexOf(index)!=-1) {
+			int num=temp.indexOf(index);
+			if(num==0) {
+				list.add("");
+			}else {
+				list.add(temp.substring(0,num));
+			}
+			temp=temp.substring(num+indexLen);
+		}
+		list.add(temp);
+		arr=new String[list.size()];
+		for(int i=0;i<arr.length;i++) {
+			arr[i]=list.get(i);
+		}
+		return arr;
+	}
+}

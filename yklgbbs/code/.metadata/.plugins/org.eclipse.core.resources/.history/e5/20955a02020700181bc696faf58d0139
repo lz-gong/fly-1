@@ -1,0 +1,18 @@
+package com.neusoft.service;
+
+import java.util.List;
+
+import com.neusoft.bean.Category;
+import com.neusoft.dao.ITopicDao;
+import com.neusoft.dao.TopicDaoImp;
+
+public class TopicServiceImp implements ITopicService{
+
+	@Override
+	public List<Category> getCategoryInfo() {
+		ITopicDao itd=new TopicDaoImp();
+		List<Category> list=itd.getCategoryInfo();
+		return null;
+	}
+
+}

@@ -1,0 +1,73 @@
+package com.neusoft.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.neusoft.bean.Userinfo;
+import com.neusoft.service.IUserService;
+import com.neusoft.service.UserServiceImp;
+
+/**
+ * Servlet implementation class RegServlet
+ */
+@WebServlet("/reg.do")  //这个是java工作人员的习惯
+public class RegServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		//1.获取前台参数
+		String email=request.getParameter("email").trim();
+		String nickName = request.getParameter("nickName").trim();
+		String password =request.getParameter("pass").trim();
+		String repassword=request.getParameter("repass").trim();
+		
+		System.out.println(0);
+		
+		if(nickName!="") { //判断是否为null
+			System.out.println(1);
+			if(password.length()>=6 && repassword.length()>=6) {
+				System.out.println(2);
+				if(password.equals(repassword)) {
+					System.out.println(3);
+					Userinfo ui=new Userinfo();
+					ui.setEmail(email);
+					ui.setNickname(nickName);
+					ui.setPassword(password);
+					IUserService ius=new UserServiceImp();
+					int rel = ius.addUser(ui);  //这个temp暂时没用上
+				}else {
+					request.getSession().setAttribute("error_password2", "密码不相同！");
+				}
+			}else {
+				request.getSession().setAttribute("error_password1", "密码长度小于6位！");
+			}
+		}else {
+			request.getSession().setAttribute("error_nickName", "昵称不能为空！");
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.neusoft.service;
+
+import com.neusoft.bean.Userinfo;
+
+public class UserServiceImp implements IUserService{
+
+	@Override
+	public int addUser(Userinfo user) {
+		//调用dao层注册用户
+		
+		
+		return 0;
+	}
+
+}

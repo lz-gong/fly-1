@@ -1,0 +1,40 @@
+package com.neusoft.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class SetUserInfoServlet
+ */
+@WebServlet("/setuser.do")
+public class SetUserInfoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email=request.getParameter("email");
+		String nickName=request.getParameter("nickName");
+		String sex=request.getParameterValues("sex");
+		String city=request.getParameter("city");
+		String sign=request.getParameter("sign");
+		
+		if(email!=null && nickName!=null && city!=null) {
+			email=email.trim();
+			nickName=nickName.trim();
+			city=city.trim();
+			sign=sign.trim();
+			if()
+			
+		}else {
+			response.sendRedirect(request.getContextPath()+"/jsp/user/set.jsp");
+		}
+	}
+
+}

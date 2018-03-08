@@ -1,0 +1,8 @@
+package com.neusoft.dao;
+
+import com.neusoft.bean.Userinfo;
+
+public interface IUserDao {
+	int addUser(Userinfo user);
+	Userinfo findUser(String email,String passowrd);
+}

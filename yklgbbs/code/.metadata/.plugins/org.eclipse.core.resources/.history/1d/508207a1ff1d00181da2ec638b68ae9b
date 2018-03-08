@@ -1,0 +1,46 @@
+package com.neusoft.servlet;
+
+import java.io.IOException;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.tomcat.util.buf.UEncoder;
+
+import com.neusoft.bean.Topicinfo;
+import com.neusoft.bean.Userinfo;
+import com.neusoft.dao.ITopicDao;
+import com.neusoft.dao.TopicDaoImp;
+import com.neusoft.service.ITopicService;
+import com.neusoft.service.IUserService;
+import com.neusoft.service.TopicServiceImp;
+import com.neusoft.service.UserServiceImp;
+
+/**
+ * Servlet implementation class AddTopicServlet
+ */
+@WebServlet("/addTopic.do")
+public class AddTopicServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String checkCode=(String)request.getSession().getAttribute("checkCode");
+		if(checkCode==null) {
+			response.sendRedirect(request.getContextPath()+"/jsp/tips.jsp");
+		}else {
+			response.sendRedirect(request.getContextPath()+"/jsp/tips.jsp");
+		}
+	}
+
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="c:if" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="c:if"/>
+			<item value="user"/>
+			<item value="userinfo"/>
+			<item value="近期热议"/>
+			<item value="top_none"/>
+			<item value="m-pagination"/>
+			<item value="posi"/>
+			<item value="position"/>
+			<item value="page_fenye"/>
+			<item value="size"/>
+			<item value="color"/>
+			<item value="hover"/>
+			<item value="border"/>
+			<item value="border-color"/>
+			<item value="corder"/>
+		</list>
+		<list key="replacehistory">
+			<item value="暂无"/>
+			<item value="&quot;"/>
+			<item value="${pageContext.request.contextPath}"/>
+			<item value="topTopicInfo"/>
+			<item value="${pageContext.request.contextPath }"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="301" key="DIALOG_WIDTH"/>
+		<item value="1|宋体|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|宋体" key="DIALOG_FONT_NAME"/>
+		<item value="364" key="DIALOG_HEIGHT"/>
+		<item value="815" key="DIALOG_X_ORIGIN"/>
+		<item value="306" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

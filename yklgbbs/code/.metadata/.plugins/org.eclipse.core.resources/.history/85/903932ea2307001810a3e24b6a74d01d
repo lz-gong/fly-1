@@ -1,0 +1,9 @@
+package com.neusoft.dao;
+
+import java.util.List;
+
+import com.neusoft.bean.Category;
+
+public interface ITopicDao {
+	List<Category> getCategoryInfo();
+}
