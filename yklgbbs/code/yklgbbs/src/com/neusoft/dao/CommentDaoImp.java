@@ -462,7 +462,7 @@ public class CommentDaoImp implements ICommentDao{
 					"join tab_bbs_message tbm\r\n" + 
 					"on tbm.comment_id=tbc.id\r\n" + 
 					"where is_topic=0 and topic_userid=?\r\n" + 
-					"limit ?,?");
+					"order by tbm.id desc limit ?,?");
 			ps.setInt(1, userid);
 			ps.setInt(2, pageIndex*pageSize);
 			ps.setInt(3, pageSize);
