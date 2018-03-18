@@ -26,7 +26,7 @@
   <script type="text/javascript">
         window.onload=function () {
         	
-       	//判断是否有top榜的cookie，如果没有则添加
+       	//判断是否有top榜的cookie，如果没有则添加。
        	if(get_cookie('weekAnswerList')==''){
        		var hidd=document.getElementById('hidden_topicid').value;
        		window.location.href="${pageContext.request.contextPath}/jsp/add_cookie.jsp?topicid="+hidd+"&check=0";
