@@ -1,7 +1,0 @@
-package com.neusoft.utils;
-
-public class GradeUtil {
-	public static String getGrade() {
-		
-	}
-}

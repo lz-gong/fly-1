@@ -105,7 +105,7 @@
         
           <!-- <button class="layui-btn" lay-filter="*" lay-submit>立即发布</button> -->
           <!-- 注：请求异常是lay-filter="*"引起的，   lay-submit不要删掉，这个可以帮我们检查表单是否填写了-->
-        <input type="submit" class="layui-btn" value="立即发布" lay-submit>
+        <input type="submit" class="layui-btn" value="确认编辑" lay-submit>
           
         </div>
       </form>

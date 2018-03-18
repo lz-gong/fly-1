@@ -1,5 +1,0 @@
-package com.neusoft.bean;
-
-public class Image {
-	private String url;
-}

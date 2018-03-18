@@ -75,7 +75,7 @@
                     if(xhr.readyState===4){
                         if(xhr.status===200){
                         	var temp=xhr.responseText;
-                            if(temp=='true'){f
+                            if(temp=='true'){
                             	collect_button.style.display='none';
                                 cancale_collect_button.style.display="inline-block";
                             }else{
